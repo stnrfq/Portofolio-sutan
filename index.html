@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio Sutan</title>
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo">Portofolio</a>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-img">
+            <!-- Flip card: front image, back text -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="./img/photoprofile.png" alt="Sutan Photo">
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="flip-text">
+                            <h3>Sutan Abdul Rofiq</h3>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-content">
+            <h1>Hi, It's <span>Sutan</span></h1>
+
+            <!-- Typing line: we'll animate each character with JS for per-letter type effect -->
+            <h3 class="typing-line">I'm a <span id="typed"></span><span class="cursor">|</span></h3>
+
+            <p>I’m passionate about building creative and user-friendly digital experiences. I enjoy turning ideas into functional applications using modern web and mobile technologies. I’m always eager to learn new tools and improve my skills in software development.</p>
+
+            <div class="home-actions">
+            <a 
+            href="mailto:sutan.ar261006@gmail.com?subject=Collaboration%20Opportunity%20with%20Sutan&body=Hello%20Sutan%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I'm%20interested%20in%20collaborating%20with%20you.%20Please%20let%20me%20know%20your%20availability.%0A%0ABest%20regards%2C%0A[Your%20Name]"
+            class="btn hire-btn">
+            Hire me
+            </a>
+
+                <!-- Download CV button -->
+                <a href="./img/Sutan Abdul Rofiq - CV.pdf" class="btn download-btn" download>Download CV</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/sutan-abdul-rofiq-978409340" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/stnrfq" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://x.com/stnrfq" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/stnrfq" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (new, before skills) -->
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        <div class="about-content">
+            <div class="about-photo">
+                <img src="./img/photoprofile.png" alt="About Photo">
+            </div>
+            <div class="about-desc">
+                <h3>Sutan Abdul Rofiq</h3>
+                <p>
+                    Hello — I'm Sutan, a passionate software engineer in training. I enjoy building web and mobile applications,
+                    learning new technologies, and experimenting with design. Currently working on chat AI apps and FlutterFlow projects.
+                </p>
+                <p><strong>Location:</strong> Depok, Indonesia</p>
+                <p><strong>Availability:</strong> Open for internships & collaborations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+<section class="skills" id="skills">
+    <h2 class="heading">My <span>Skills</span></h2>
+    <div class="skills-grid">
+        <button class="skill-item" data-skill="html">
+            <i class="fa-brands fa-html5"></i>
+            <span>HTML</span>
+        </button>
+        <button class="skill-item" data-skill="cpp">
+            <i class="fa-solid fa-code"></i>
+            <span>C++</span>
+        </button>
+        <button class="skill-item" data-skill="flutterflow">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <span>FlutterFlow</span>
+        </button>
+        <button class="skill-item" data-skill="firebase">
+            <i class="fa-solid fa-database"></i>
+            <span>Firebase</span>
+        </button>
+        <button class="skill-item" data-skill="networking">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>Networking</span>
+        </button>
+    </div>
+</section>
+
+        <!-- Modal template for skill details -->
+        <div class="modal" id="skillModal" aria-hidden="true">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="modal-body">
+                    <div class="modal-text">
+                        <h3 id="skillTitle">Skill Title</h3>
+                        <p id="skillDesc">Skill description goes here. This is a dummy description. Replace with your real skill details.</p>
+                        <ul id="skillBullets"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <h2 class="heading">My <span>Education</span></h2>
+        <div class="education-content">
+            <div class="education-left">
+                <p><b>SMKN 2 Depok</b> — Teknik Jaringan Komputer dan Telekomunikasi</p>
+                <p>2021 - 2025 (Expected Graduation)</p>
+                <p><b>POLITEKNIK NEGERI INDRAMAYU</b> - Rekayasa Perangkat Lunak</p>
+            </div>
+
+            <div class="education-carousel">
+                <div class="carousel-window">
+                    <div class="carousel-track" id="eduTrack">
+                        <!-- sample images; replace with real photos later -->
+                        <img src="./img/edu1.jpg" alt="edu1" class="carousel-item">
+                        <img src="./img/edu2.jpg" alt="edu2" class="carousel-item">
+                        <img src="./img/edu3.jpg" alt="edu3" class="carousel-item">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button id="eduPrev" class="icon-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button id="eduNext" class="icon-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Experience Section -->
+<section class="experience" id="experience">
+  <h2 class="heading">My <span>Experience</span></h2>
+
+  <div class="experience-grid">
+
+    <!-- Card 1 -->
+    <div class="exp-card" data-exp="exp1">
+    <img src="./img/SistemCode.png" alt="Experience 1" class="exp-img">
+    <h3>PT. Idemu Sistem Sinergi</h3>
+    <p>Programmer Intern</p>
+    <a href="#" class="btn view-btn" data-exp="exp1">View Details</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="exp-card" data-exp="exp2">
+      <img src="./img/logoAPP.png" alt="Chat AI Project" class="exp-img">
+      <h3>Chat AI Project</h3>
+      <p>Lead Developer (Student Project)</p>
+      <a href="https://apps.apple.com/id/app/waifu-chat-anime-ai/id6692612875" target="_blank" class="btn" download>Download App</a>
+    </div>
+
+  </div>
+
+  <!-- Modal (biarkan tetap di bawah section) -->
+  <div class="modal" id="expModal" aria-hidden="true">
+    <div class="modal-content small">
+      <button class="modal-close">&times;</button>
+      <div class="modal-body horizontal">
+        <div class="modal-img">
+          <img src="./img/exp1.png" alt="Experience Image">
+        </div>
+        <div class="modal-text">
+          <h3 id="expTitle">Experience Title</h3>
+          <p id="expDesc">Experience description — dummy content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Certificates Section -->
+    <section class="certificates" id="certificates">
+        <h2 class="heading">My <span>Certificates</span></h2>
+        <div class="cert-grid">
+        <!-- Certificate 1 -->
+        <div class="cert-card" data-cert="cert1">
+            <img src="./img/cert1.png" alt="cert1">
+            <h4>BNSP Certification</h4>
+            <a href="#" class="view-btn" data-cert="cert1">View Details</a>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="cert-card" data-cert="cert2">
+            <img src="./img/cert2.png" alt="cert2">
+            <h4>Mikrotik Certification</h4>
+            <a href="#" class="view-btn" data-cert="cert2">View Details</a>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="cert-card" data-cert="cert3">
+            <img src="./img/cert3.png" alt="cert3">
+            <h4>Internship Certification</h4>
+            <a href="#" class="view-btn" data-cert="cert3">View Details</a>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div class="cert-card" data-cert="cert4">
+            <img src="./img/cert4.png" alt="cert4">
+            <h4>Dilesin Academy Certification</h4>
+            <a href="#" class="view-btn" data-cert="cert4">View Details</a>
+        </div>
+    </div>
+
+
+        <!-- Modal for certificates -->
+        <div class="modal" id="certModal" aria-hidden="true">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="modal-body">
+                    <div class="modal-img">
+                        <img src="./img/cert1.png" alt="Certificate Image" id="certImg">
+                    </div>
+                    <div class="modal-text">
+                        <h3 id="certTitle">Certificate Title</h3>
+                        <p id="certDesc">Certificate description goes here. Replace with your actual certificate information and details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <div class="contact-content">
+            <form action="mailto:sutan@example.com" method="post" enctype="text/plain" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+
+            <!-- text moved to right of form -->
+            <div class="contact-info">
+                <h3>Get in touch</h3>
+                <p>Email: sutan.ar261006@gmail.com</p>
+                <p>LinkedIn: linkedin.com/in/sutan</p>
+                <p>Instagram: @stnrfq</p>
+                <p>Feel free to contact me for collaborations, internships, or project discussions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="footer">
+  <p>Sutan Rofiq's Portfolio © 2025</p>
+</footer>
+
+<!-- Scroll To Top Button -->
+<button id="scrollTopBtn" class="scroll-top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+    <!-- Reusable overlay for accessibility -->
+    <div id="overlay" class="overlay" aria-hidden="true"></div>
+
+    <!-- Scripts: small JS for typing, modals, carousel -->
+    <script>
+        // ---------- Typing effect (per-letter) ----------
+        const words = ["Software Engineer", "Developer", "Web Designer", "Mobile Developer", "AI Engineer"];
+        const typedEl = document.getElementById('typed');
+        const cursor = document.querySelector('.cursor');
+        let wordIndex = 0;
+        let letterIndex = 0;
+        let typingSpeed = 80;
+        let pauseBetween = 1200;
+
+        function type() {
+            const current = words[wordIndex];
+            if (letterIndex < current.length) {
+                typedEl.textContent += current.charAt(letterIndex);
+                letterIndex++;
+                setTimeout(type, typingSpeed);
+            } else {
+                // wait then delete
+                setTimeout(erase, pauseBetween);
+            }
+        }
+        function erase() {
+            const current = words[wordIndex];
+            if (letterIndex > 0) {
+                typedEl.textContent = current.substring(0, letterIndex -1);
+                letterIndex--;
+                setTimeout(erase, typingSpeed / 2);
+            } else {
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(type, 300);
+            }
+        }
+        // start
+        document.addEventListener('DOMContentLoaded', () => {
+            type();
+            // cursor blink
+            setInterval(() => {
+                cursor.style.opacity = (cursor.style.opacity === '0' ? '1' : '0');
+            }, 500);
+        });
+
+        // ---------- Flip card: no JS needed (CSS handles hover) ----------
+
+        // ---------- Modal generic helpers ----------
+        const overlay = document.getElementById('overlay');
+        function openModal(modal) {
+            modal.setAttribute('aria-hidden', 'false');
+            modal.classList.add('open');
+            overlay.setAttribute('aria-hidden', 'false');
+            overlay.classList.add('show');
+        }
+        function closeModal(modal) {
+            modal.setAttribute('aria-hidden', 'true');
+            modal.classList.remove('open');
+            overlay.setAttribute('aria-hidden', 'true');
+            overlay.classList.remove('show');
+        }
+        // close when overlay clicked
+        overlay.addEventListener('click', () => {
+            document.querySelectorAll('.modal.open').forEach(m => closeModal(m));
+        });
+        // close when clicking .modal-close
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.modal-close')) {
+                const modal = e.target.closest('.modal');
+                if (modal) closeModal(modal);
+            }
+        });
+
+        // ---------- Skills modal ----------
+        const skillModal = document.getElementById('skillModal');
+        const skillTitle = document.getElementById('skillTitle');
+        const skillDesc = document.getElementById('skillDesc');
+        const skillBullets = document.getElementById('skillBullets');
+
+        const skillsData = {
+            html: {
+                title: 'HTML',
+                desc: 'Markup language for structuring web content. Comfortable building semantic HTML and accessible markup.',
+                bullets: ['Semantic HTML', 'Forms & Accessibility', 'SEO friendly structure']
+            },
+            cpp: {
+                title: 'C++',
+                desc: 'C++ programming for performance-critical tasks and system programming. Basic to intermediate experience.',
+                bullets: ['OOP (classes)', 'STL usage', 'File I/O & Algorithms']
+            },
+            flutterflow: {
+                title: 'FlutterFlow',
+                desc: 'Visual app builder for Flutter; integrated with Firebase for backend features.',
+                bullets: ['Layouts & Actions', 'Firebase integration', 'Custom functions']
+            },
+            firebase: {
+                title: 'Firebase',
+                desc: 'Realtime & Firestore databases, Authentication, Hosting.',
+                bullets: ['Firestore rules', 'Auth (email)', 'Storage']
+            },
+            networking: {
+                title: 'Networking',
+                desc: 'Basic network cabling and device configuration (RJ45, basic router/switch config).',
+                bullets: ['RJ45 crimping', 'Subnet basics', 'Basic device setup']
+            },
+        };
+
+        document.querySelectorAll('.skill-item').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const key = btn.dataset.skill;
+                const data = skillsData[key];
+                if (!data) return;
+                skillTitle.textContent = data.title;
+                skillDesc.textContent = data.desc;
+                skillBullets.innerHTML = '';
+                data.bullets.forEach(b => {
+                    const li = document.createElement('li');
+                    li.textContent = b;
+                    skillBullets.appendChild(li);
+                });
+                openModal(skillModal);
+            });
+        });
+
+        // ---------- Education carousel ----------
+        const track = document.getElementById('eduTrack');
+        const prevBtn = document.getElementById('eduPrev');
+        const nextBtn = document.getElementById('eduNext');
+        let position = 0;
+        const itemWidth = 220; // match CSS width of .carousel-item
+        prevBtn.addEventListener('click', () => {
+            position = Math.min(position + itemWidth, 0);
+            track.style.transform = `translateX(${position}px)`;
+        });
+        nextBtn.addEventListener('click', () => {
+            const maxTranslate = - (track.scrollWidth - itemWidth*1.2); // allow showing one item
+            position = Math.max(position - itemWidth, maxTranslate);
+            track.style.transform = `translateX(${position}px)`;
+        });
+
+        // ---------- Experience modals ----------
+const expData = {
+  exp1: {
+    title: 'PT. Idemu Sistem Sinergi',
+    desc: 'Internship work: developing FlutterFlow apps, integrating Firebase, testing features, collaborating in a dev team.',
+    img: './img/exp1.png'
+  },
+  exp2: {
+    title: 'Chat AI Project',
+    desc: 'Student project: created a chat AI app with Firestore-based chats, character system, and UI prototyping.',
+    img: './img/exp2.png'
+  }
+};
+
+// Tombol View Details agar buka modal juga
+document.querySelectorAll('.view-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault(); // biar gak reload halaman
+    const key = btn.dataset.exp;
+    const data = expData[key];
+    expTitle.textContent = data.title;
+    expDesc.textContent = data.desc;
+    if (data.img) {
+      expModal.querySelector('.modal-img img').src = data.img;
+    }
+    openModal(expModal);
+  });
+});
+
+
+
+        document.querySelectorAll('.exp-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const key = card.dataset.exp;
+                const data = expData[key];
+                expTitle.textContent = data.title;
+                expDesc.textContent = data.desc;
+                if (data.img) {
+                    expModal.querySelector(".modal-img img").src = data.img;
+                }
+                openModal(expModal);
+
+            });
+        });
+
+        // ---------- Certificates modal ----------
+        const certModal = document.getElementById('certModal');
+        const certTitle = document.getElementById('certTitle');
+        const certDesc = document.getElementById('certDesc');
+        const certImg = document.getElementById('certImg');
+
+        const certData = {
+        cert1: {
+            title: 'BNSP Certification',
+            desc: 'Certified by the National Professional Certification Agency (BNSP), demonstrating my competence in the field of Information and Communication Technology. This certification validates my technical skills, work professionalism, and readiness to meet industry standards.',
+            img: './img/BNSP.png'
+        },
+        cert2: {
+            title: 'Mikrotik Certification',
+            desc: 'Certified as a MikroTik Certified Network Associate (MTCNA), demonstrating a solid understanding of computer networking fundamentals, including IP addressing, routing, wireless configuration, and network management using MikroTik RouterOS. This certification proves my ability to set up, manage, and troubleshoot small to medium-sized networks.',
+            img: './img/MTCNA.png'
+        },
+        cert3: {
+            title: 'Internship Certification',
+            desc: 'Completed an internship program at PT. Idemu Sistem Sinergi as a programmer, where I gained hands-on experience in developing applications using FlutterFlow and Firebase. This internship enhanced my teamwork, problem-solving, and project development skills.',
+            img: './img/PKL.png'
+        },
+        cert4: {
+            title: 'Dilesin Academy Certification',
+            desc: 'Completed the “Basic Algorithm with C++” course at Dilesin Academy. Through this program, I learned essential programming logic, problem-solving strategies, and the fundamentals of algorithm design using C++ language.',
+            img: './img/Dilesin.png'
+        },
+    };
+
+
+        document.querySelectorAll('.cert-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const key = card.dataset.cert;
+                const data = certData[key];
+                certTitle.textContent = data.title;
+                certDesc.textContent = data.desc;
+                certImg.src = data.img;
+                openModal(certModal);
+            });
+        });
+
+        // View Details button for certificates
+        document.querySelectorAll('.view-btn[data-cert]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const key = btn.dataset.cert;
+                const data = certData[key];
+                certTitle.textContent = data.title;
+                certDesc.textContent = data.desc;
+                certImg.src = data.img;
+                openModal(certModal);
+            });
+        });
+
+
+        // ---------- Navbar active on scroll ----------
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("header nav a");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                const sectionHeight = section.offsetHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute("id");
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+        // Scroll-to-top button
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// ====== AUTO SLIDE UNTUK EDUCATION CAROUSEL ======
+const eduTrack = document.getElementById("eduTrack");
+const eduItems = document.querySelectorAll(".carousel-item");
+
+let currentIndex = 0;
+const totalItems = eduItems.length;
+
+function moveToNextEdu() {
+  currentIndex = (currentIndex + 1) % totalItems;
+  eduTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// tombol manual (kalau masih dipakai)
+document.getElementById("eduNext").addEventListener("click", () => {
+  moveToNextEdu();
+});
+
+document.getElementById("eduPrev").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+  eduTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+});
+
+// auto-slide tiap 4 detik
+setInterval(moveToNextEdu, 4000);
+
+
+    </script>
+</body>
+</html>
