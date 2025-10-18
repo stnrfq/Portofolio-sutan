@@ -10,17 +10,25 @@
 </head>
 <body>
     <header>
-        <a href="#home" class="logo">Portofolio</a>
-        <nav>
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#certificates">Certificates</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <a href="#home" class="logo">Portofolio</a>
+
+  <!-- Tombol hamburger -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <!-- Drawer menu -->
+  <nav id="nav-menu">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
 
     <!-- Home Section -->
     <section class="home" id="home">
@@ -42,7 +50,7 @@
         </div>
 
         <div class="home-content">
-            <h1>Hi, It's <span>Sutan</span></h1>
+            <h1>Hi, It's <span>Sutan Abdul Rofiq</span></h1>
 
             <!-- Typing line: we'll animate each character with JS for per-letter type effect -->
             <h3 class="typing-line">I'm a <span id="typed"></span><span class="cursor">|</span></h3>
@@ -61,7 +69,7 @@
             </div>
 
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/stnrfq" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/sutan-abdul-rofiq-978409340" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/stnrfq" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://x.com/stnrfq" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="https://www.instagram.com/stnrfq" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -264,9 +272,10 @@
             <!-- text moved to right of form -->
             <div class="contact-info">
                 <h3>Get in touch</h3>
-                <p>Email: sutan.ar261006@gmail.com</p>
-                <p>LinkedIn: <a href="https://linkedin.com/in/stnrfq">linkedin.com/in/stnrfq</a></p>
-                <p>Instagram: <a href="https://instagram.com/stnrfq">@stnrfq</a></p>
+                <p>Email: <a href="mailto:sutan.ar261006@gmail.com?subject=Collaboration%20Opportunity%20with%20Sutan&body=Hello%20Sutan%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I'm%20interested%20in%20collaborating%20with%20you.%20Please%20let%20me%20know%20your%20availability.%0A%0ABest%20regards%2C%0A[Your%20Name]">sutan.ar261006@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/stnrfq" target="_blank">linkedin.com/in/stnrfq</a></p>
+                <p>GitHub: <a href="https://github.com/stnrfq" target="_blank">@stnrfq</a></p>
+                <p>Instagram: <a href="https://instagram.com/stnrfq/" target="_blank">@stnrfq</a></p>
                 <p>Feel free to contact me for collaborations, internships, or project discussions.</p>
             </div>
         </div>
@@ -583,9 +592,25 @@ document.getElementById("eduPrev").addEventListener("click", () => {
 // auto-slide tiap 4 detik
 setInterval(moveToNextEdu, 4000);
 
+  // Toggle drawer menu
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    menuToggle.querySelector('i').classList.toggle('fa-bars');
+    menuToggle.querySelector('i').classList.toggle('fa-xmark');
+  });
+
+  // Tutup menu otomatis saat klik link
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+      menuToggle.querySelector('i').classList.add('fa-bars');
+      menuToggle.querySelector('i').classList.remove('fa-xmark');
+    });
+  });
 
     </script>
 </body>
 </html>
-
-
