@@ -18,15 +18,16 @@
   </div>
 
   <!-- Drawer menu -->
-  <nav id="nav-menu">
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
-  </nav>
+     <nav id="nav-menu">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#reflection">Reflection</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 
@@ -54,6 +55,9 @@
 
             <!-- Typing line: we'll animate each character with JS for per-letter type effect -->
             <h3 class="typing-line">I'm a <span id="typed"></span><span class="cursor">|</span></h3>
+              <p class="student-info">
+                <strong>Student ID:</strong> 2505012 <br>
+            </p>
 
             <p>I’m passionate about building creative and user-friendly digital experiences. I enjoy turning ideas into functional applications using modern web and mobile technologies. I’m always eager to learn new tools and improve my skills in software development.</p>
 
@@ -87,8 +91,8 @@
             <div class="about-desc">
                 <h3>Sutan Abdul Rofiq</h3>
                 <p>
-                    Hello — I'm Sutan, a passionate software engineer in training. I enjoy building web and mobile applications,
-                    learning new technologies, and experimenting with design. Currently working on chat AI apps and FlutterFlow projects.
+                    Hello — I'm Sutan, a passionate software engineer in training. I enjoy building web and mobile applications, learning new technologies, and experimenting with design. 
+                    I am currently working on chat AI applications and FlutterFlow-based projects.
                 </p>
                 <p><strong>Location:</strong> Depok, Indonesia</p>
                 <p><strong>Availability:</strong> Open for internships & collaborations</p>
@@ -144,7 +148,7 @@
         <div class="education-content">
             <div class="education-left">
                 <p><b>SMKN 2 Depok</b> — Teknik Jaringan Komputer dan Telekomunikasi</p>
-                <p>2021 - 2025 (Expected Graduation)</p>
+                <p>2021 - 2025 (Expected Graduation)</p><br>
                 <p><b>POLITEKNIK NEGERI INDRAMAYU</b> - Rekayasa Perangkat Lunak</p>
             </div>
 
@@ -258,6 +262,26 @@
         </div>
     </section>
 
+    <!-- Reflection Section -->
+    <section class="reflection" id="reflection">
+        <h2 class="heading">My <span>Reflection</span></h2>
+        <div class="reflection-content">
+            <p>
+            Developing my Chat AI application was a challenging yet rewarding experience. It started as a simple idea to build an interactive chat app, but soon evolved into a complex project that combined design, logic, and database integration. I used FlutterFlow for the front-end and Firebase as the backend to manage real-time chat data and AI character interactions.
+            </p><br>
+            <p>
+            One of the main challenges I faced was connecting the user interface with the database smoothly while maintaining fast responses. I spent time learning how to structure Firestore collections and set up user-based message limits to ensure performance. Through trial, error, and research, I gradually improved the system and made it more stable.
+            </p><br>
+            <p>
+            This project helped me grow not only as a developer but also as a problem solver. I learned how to manage project structure, debug logical issues, and test features like authentication and data syncing. It also made me more confident in combining creativity with technical knowledge to produce a product that feels both smart and user-friendly.
+            </p><br>
+            <p>
+            At the beginning, I had little experience connecting a front-end interface with a database. As I continued developing the Chat AI app, I gradually learned how to manage Firestore data, optimize real-time communication, and debug complex logic. Seeing the app evolve from a simple chat prototype into a fully functional product was the clearest sign of my progress as a developer.
+            </p>
+        </div>
+    </section>
+
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
@@ -298,7 +322,7 @@
     <!-- Scripts: small JS for typing, modals, carousel -->
     <script>
         // ---------- Typing effect (per-letter) ----------
-        const words = ["Software Engineer", "Developer", "Web Designer", "Mobile Developer", "AI Engineer"];
+        const words = ["Software Engineer", "Student at Politechnic of Indramayu", "Programmer"];
         const typedEl = document.getElementById('typed');
         const cursor = document.querySelector('.cursor');
         let wordIndex = 0;
@@ -374,7 +398,7 @@
         const skillsData = {
             html: {
                 title: 'HTML',
-                desc: 'Markup language for structuring web content. Comfortable building semantic HTML and accessible markup.',
+                desc: 'It is a markup language used for structuring web content. I am comfortable building semantic and accessible HTML markup.',
                 bullets: ['Semantic HTML', 'Forms & Accessibility', 'SEO friendly structure']
             },
             cpp: {
@@ -436,15 +460,20 @@
 const expData = {
   exp1: {
     title: 'PT. Idemu Sistem Sinergi',
-    desc: 'Internship work: developing FlutterFlow apps, integrating Firebase, testing features, collaborating in a dev team.',
+    desc: `During my internship at PT. Idemu Sistem Sinergi in 2024, I worked as a programmer intern in the development team.
+    My objective was to learn how to develop real-world applications using FlutterFlow and Firebase.
+    As a result, I gained hands-on experience in app development, teamwork, and problem-solving, which strengthened my understanding of professional programming environments.`,
     img: './img/exp1.png'
   },
   exp2: {
     title: 'Chat AI Project',
-    desc: 'Student project: created a chat AI app with Firestore-based chats, character system, and UI prototyping.',
+    desc: `As part of my AI learning journey, I developed a Chat AI application using FlutterFlow and Firebase.
+    The goal of this project was to create an interactive AI chat app with a character-based system.
+    This project enhanced my knowledge of UI design, database structure, and real-time data synchronization in mobile applications.`,
     img: './img/exp2.png'
   }
 };
+
 
 // Tombol View Details agar buka modal juga
 document.querySelectorAll('.view-btn').forEach(btn => {
@@ -483,28 +512,29 @@ document.querySelectorAll('.view-btn').forEach(btn => {
         const certDesc = document.getElementById('certDesc');
         const certImg = document.getElementById('certImg');
 
-        const certData = {
-        cert1: {
-            title: 'BNSP Certification',
-            desc: 'Certified by the National Professional Certification Agency (BNSP), demonstrating my competence in the field of Information and Communication Technology. This certification validates my technical skills, work professionalism, and readiness to meet industry standards.',
-            img: './img/BNSP.png'
-        },
-        cert2: {
-            title: 'Mikrotik Certification',
-            desc: 'Certified as a MikroTik Certified Network Associate (MTCNA), demonstrating a solid understanding of computer networking fundamentals, including IP addressing, routing, wireless configuration, and network management using MikroTik RouterOS. This certification proves my ability to set up, manage, and troubleshoot small to medium-sized networks.',
-            img: './img/MTCNA.png'
-        },
-        cert3: {
-            title: 'Internship Certification',
-            desc: 'Completed an internship program at PT. Idemu Sistem Sinergi as a programmer, where I gained hands-on experience in developing applications using FlutterFlow and Firebase. This internship enhanced my teamwork, problem-solving, and project development skills.',
-            img: './img/PKL.png'
-        },
-        cert4: {
-            title: 'Dilesin Academy Certification',
-            desc: 'Completed the “Basic Algorithm with C++” course at Dilesin Academy. Through this program, I learned essential programming logic, problem-solving strategies, and the fundamentals of algorithm design using C++ language.',
-            img: './img/Dilesin.png'
-        },
-    };
+       const certData = {
+  cert1: {
+    title: 'BNSP Certification',
+    desc: 'I pursued this certification to validate my professional competence. Certified by the National Professional Certification Agency (BNSP), it demonstrates my technical skills, work professionalism, and readiness to meet industry standards.',
+    img: './img/BNSP.png'
+  },
+  cert2: {
+    title: 'Mikrotik Certification',
+    desc: 'I earned this certification to strengthen my understanding of networking fundamentals. Certified as a MikroTik Certified Network Associate (MTCNA), it proves my ability to set up, manage, and troubleshoot networks using MikroTik RouterOS.',
+    img: './img/MTCNA.png'
+  },
+  cert3: {
+    title: 'Internship Certification',
+    desc: 'This certificate recognizes my internship at PT. Idemu Sistem Sinergi as a programmer intern. Through this experience, I developed skills in FlutterFlow, Firebase, teamwork, and project development.',
+    img: './img/PKL.png'
+  },
+  cert4: {
+    title: 'Dilesin Academy Certification',
+    desc: 'I took this course to strengthen my algorithmic and programming logic foundation. Through the program, I learned essential problem-solving techniques and the fundamentals of algorithm design using the C++ programming language.',
+    img: './img/Dilesin.png'
+  }
+};
+
 
 
         document.querySelectorAll('.cert-card').forEach(card => {
