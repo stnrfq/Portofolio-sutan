@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-  <a href="#home" class="logo">Portfolio</a>
+  <a href="#home" class="logo">Portofolio</a>
 
   <!-- Tombol hamburger -->
   <div class="menu-toggle" id="menu-toggle">
@@ -69,7 +69,7 @@
             </a>
 
                 <!-- Download CV button -->
-                <a href="./img/SutanAbdulRofiq_2505012_CV.pdf" class="btn download-btn" download>Download CV</a>
+                <a href="./img/SutanAbdulRofiq_2505012_CV.pdf" id="downloadCV" class="btn download-btn" download>Download CV</a>
             </div>
 
             <div class="social-icons">
@@ -641,8 +641,24 @@ setInterval(moveToNextEdu, 4000);
     });
   });
 
+  // ---------- Notifikasi setelah Download CV ----------
+const downloadBtn = document.getElementById("downloadCV");
+
+if (downloadBtn) {
+  downloadBtn.addEventListener("click", (e) => {
+    // Notifikasi sederhana
+    const notif = document.createElement("div");
+    notif.textContent = "📁 CV kamu sedang diunduh!";
+    notif.className = "download-notif";
+    document.body.appendChild(notif);
+
+    // Hilangkan setelah 3 detik
+    setTimeout(() => {
+      notif.remove();
+    }, 3000);
+  });
+}
+
     </script>
 </body>
 </html>
-
-
